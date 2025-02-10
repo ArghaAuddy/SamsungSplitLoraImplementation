@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service SplitLora {
+    rpc SendEmbeddings (EmbeddingsRequest) returns (LogitsResponse);
+}
+
+message EmbeddingsRequest {
+    repeated float embeddings = 1;  // List of floating-point embeddings
+}
+
+message LogitsResponse {
+    repeated float logits = 1;  // Model output logits
+}
